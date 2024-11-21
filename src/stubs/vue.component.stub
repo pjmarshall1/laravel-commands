@@ -1,0 +1,26 @@
+<script setup>
+
+import { onMounted, onUnmounted } from "vue";
+
+const props = defineProps({
+    text: {
+        type: String,
+        required: true,
+        default: 'Hello, World!',
+    },
+});
+
+onMounted(() => {
+    console.log('Component mounted.');
+});
+
+onUnmounted(() => {
+    console.log('Component unmounted.');
+});
+</script>
+
+<template>
+    <div class="h-full w-full rounded-lg border border-gray-100 bg-white">
+        {{ props.text }}
+    </div>
+</template>
